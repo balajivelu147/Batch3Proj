@@ -1,0 +1,13 @@
+<form>
+    <mat-form-field>
+        <input matInput id="autocomplete"
+         placeholder="State"
+         [matAutocomplete]="autocom" 
+         [formControl]="state"/>
+          <mat-autocomplete #autocom="matAutocomplete">
+           <mat-option *ngFor="let item of filteredStateItem | async" [value]="item">
+            {{item}}
+           </mat-option>
+          </mat-autocomplete>
+    </mat-form-field>
+</form>
