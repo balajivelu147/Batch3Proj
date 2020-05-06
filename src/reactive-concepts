@@ -1,0 +1,48 @@
+~~~FormGroup -- its an object which controls the form fields, this can contain a formArray and even a child group and a formcontrol
+~~~FormArray -- similar to formGroup, but if we need array functionaliys like push, pop we can use this..
+~~~FormControl --normally assigned to an element
+
+
+Formcontrol concepts:
+asyncValidator: null 
+  -->AsyncValidatorFn --> provides info asyncValidations of the formcontrol
+  --> setAsyncValidator() to set validations asynchronously
+  --> clearAsyncValidator() clears async validations
+~~~errors: null
+  --> this will help in fetching info related to errors whatever happened
+   --> setErrors() --sets error
+   --> getErrors() --gets
+   --> hasErrors() --it returns a boolean value to show whether it has error or not
+~~~pristine: true --> similar to dirty, but scope is for entire formGroup or formArray
+~~~dirty: --> once user touches the element, this will become true --> which indicates the validations started--> scope of this is element level
+~~~status: "VALID" --> this parameter indicates whether the entire form is valid, invalid, pending
+~~~statusChanges: EventEmitter {_isScalar: false, observers: Array(0), closed: false, isStopped: false, hasError: false, …}
+   --> this is fired when a event change happens in element (will cover this in practical session)
+~~~touched: false --> similar to dirty, but converts to true when user touched that element
+~~~validator: null --> displays the list of validations present in formcontrol
+~~~value: null --> provides the typed value
+~~~valueChanges: EventEmitter {_isScalar: false, observers: Array(0), closed: false, isStopped: false, hasError: false, …}
+      --> fires whenever a value change happens
+_onChange: []
+_onCollectionChange: () => { }
+_onDisabledChange: []
+_pendingValue: null
+
+these four were inbuild functions, we will use rarely
+dirty: (...)
+disabled: (...)
+ --> contains boolean elements, which indicates whether the validations should happen or not
+ --> it will be more helpful when we work on dynamic validations
+ --> disable() --> jst call it on a formcontrol to disable it (eg: formcontrol.disable())
+enabled: (...) --> opposite to disabled
+invalid: (...) --> param which indicates valid or not -- boolean
+parent: (...)  --> indicates the parent form [formGroup or formArray]
+  -- setParent() --sets parent dynamically
+pending: (...)  -- boolean -- indicates formcontrol is completed or not
+root: (...) 
+untouched: (...) -- similar to dirty
+updateOn: (...)
+valid: (...) -- boolean -- formcontrol is valid or not
+------------------------------------------------
+patchValue() ---> dynamically sets the value
+reset() --> resets entire form - used when there is a complex set of formGroup and formArray is present
