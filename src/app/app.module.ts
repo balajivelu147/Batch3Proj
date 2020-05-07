@@ -14,6 +14,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { ReactiveFormLoginComponent } from './reactive-form-login/reactive-form-login.component';
 import { AutocompleteComponent } from './reactive-form-login/autocomplete/autocomplete.component';
 import { MatAutocompleteModule } from '@angular/material/autocomplete';
+import { DynamicReactFormComponent } from './dynamic-react-form/dynamic-react-form.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -21,7 +22,8 @@ import { MatAutocompleteModule } from '@angular/material/autocomplete';
     // MatSelectModule,
     TemplateDrivenFormComponent,
     ReactiveFormLoginComponent,
-    AutocompleteComponent
+    AutocompleteComponent,
+    DynamicReactFormComponent
   ],
   imports: [
     BrowserModule,
