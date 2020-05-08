@@ -3,6 +3,16 @@
 ~~~FormControl --normally assigned to an element
 
 
+Form Group:
+The main wrapper of the form
+Can contain any type of form element
+Form Array:
+Can contain any type of form elements
+Has array-like methods to update children
+This is where the magic happens!
+Form Control:
+The main building block of forms. Allows for user interaction
+
 Formcontrol concepts:
 asyncValidator: null 
   -->AsyncValidatorFn --> provides info asyncValidations of the formcontrol
@@ -14,11 +24,22 @@ asyncValidator: null
    --> getErrors() --gets
    --> hasErrors() --it returns a boolean value to show whether it has error or not
 ~~~pristine: true --> similar to dirty, but scope is for entire formGroup or formArray
+                       True if user has not interacted with the control yet
 ~~~dirty: --> once user touches the element, this will become true --> which indicates the validations started--> scope of this is element level
 ~~~status: "VALID" --> this parameter indicates whether the entire form is valid, invalid, pending
 ~~~statusChanges: EventEmitter {_isScalar: false, observers: Array(0), closed: false, isStopped: false, hasError: false, …}
    --> this is fired when a event change happens in element (will cover this in practical session)
+      this.subCategory.statusChanges.subscribe( (status) => {
+             console.log(status); //status will be "VALID", "INVALID", "PENDING" or "DISABLED"
+               })
+
+               VALID: This control has passed all validation checks.
+               INVALID: This control has failed at least one validation check.
+               PENDING: This control is in the midst of conducting a validation check.
+               DISABLED:This control is exempt from validation checks. These status values are mutually exclusive, so a control cannot be both valid AND invalid or invalid AND disabled.
+
 ~~~touched: false --> similar to dirty, but converts to true when user touched that element
+                      -- True if control has lost focus
 ~~~validator: null --> displays the list of validations present in formcontrol
 ~~~value: null --> provides the typed value
 ~~~valueChanges: EventEmitter {_isScalar: false, observers: Array(0), closed: false, isStopped: false, hasError: false, …}
@@ -44,5 +65,5 @@ untouched: (...) -- similar to dirty
 updateOn: (...)
 valid: (...) -- boolean -- formcontrol is valid or not
 ------------------------------------------------
-patchValue() ---> dynamically sets the value
+patchValue() ---> dynamically sets the value8874444444444444444444444444444444444444444444
 reset() --> resets entire form - used when there is a complex set of formGroup and formArray is present

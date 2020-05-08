@@ -4,6 +4,7 @@ import { FormGroup, FormControl, Validators } from '@angular/forms';
 @Component({
   selector: 'app-reactive-form-login',
   templateUrl: './reactive-form-login.component.html',
+  // template: '<form ></form>'
   styleUrls: ['./reactive-form-login.component.scss']
 })
 export class ReactiveFormLoginComponent implements OnInit {
