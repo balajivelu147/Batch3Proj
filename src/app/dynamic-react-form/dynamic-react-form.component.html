@@ -1,4 +1,4 @@
-<form [formGroup]="ParentFormGroup">
+<form [formGroup]="ParentFormGroup" (ngSubmit)="onSubmit()">
     <h4>please select privilege to proceed</h4>
     <mat-form-field>
         <input matInput id="autocomplete" placeholder="Privilege" [matAutocomplete]="autocom"
@@ -24,5 +24,7 @@
                 length shoule be 10</span>
         </form>
     </div>
+
+    <button type="submit">submit</button>
 
 </form>
