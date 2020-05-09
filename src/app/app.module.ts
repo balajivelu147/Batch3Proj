@@ -15,6 +15,11 @@ import { ReactiveFormLoginComponent } from './reactive-form-login/reactive-form-
 import { AutocompleteComponent } from './reactive-form-login/autocomplete/autocomplete.component';
 import { MatAutocompleteModule } from '@angular/material/autocomplete';
 import { DynamicReactFormComponent } from './dynamic-react-form/dynamic-react-form.component';
+import { PassiveInvestmentComponent } from './Investments/passive-investment/passive-investment.component';
+import { InitialInvestmentComponent } from './Investments/initial-investment/initial-investment.component';
+import { LossComponent } from './FInancials/loss/loss.component';
+import { ProfitComponent } from './FInancials/profit/profit.component';
+import { MarginComponent } from './FInancials/margin/margin.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -23,7 +28,7 @@ import { DynamicReactFormComponent } from './dynamic-react-form/dynamic-react-fo
     TemplateDrivenFormComponent,
     ReactiveFormLoginComponent,
     AutocompleteComponent,
-    DynamicReactFormComponent
+    DynamicReactFormComponent,
   ],
   imports: [
     BrowserModule,
