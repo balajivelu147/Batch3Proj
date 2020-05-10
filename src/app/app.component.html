@@ -4,16 +4,9 @@
 <div>project created successfully!!</div> -->
 <!-- <app-autocomplete></app-autocomplete> -->
 <!-- <app-dynamic-react-form></app-dynamic-react-form> -->
-<li>
-    <ul>
-        <a routerLink = "/reactive-form-login">
-reactive-form-login
-        </a>
-    </ul>
-    <ul>
-        <a routerLink = "/investment">
-            investment
-        </a>
-    </ul>
-</li>
-<router-outlet></router-outlet>
+<div class="nav-split">
+    <app-nav-menu></app-nav-menu>
+    <div class="router-outlet">
+   <router-outlet></router-outlet>
+</div>
+</div>

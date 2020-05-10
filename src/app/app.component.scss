@@ -1,0 +1,11 @@
+.nav-split {
+    display: flex;
+}
+
+app-nav-menu {
+    width:20%;
+}
+
+.router-outlet {
+    width:80%;
+}
