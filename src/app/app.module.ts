@@ -20,6 +20,12 @@ import { InitialInvestmentComponent } from './Investments/initial-investment/ini
 import { LossComponent } from './FInancials/loss/loss.component';
 import { ProfitComponent } from './FInancials/profit/profit.component';
 import { MarginComponent } from './FInancials/margin/margin.component';
+import { NavMenuComponent } from './layouts/nav-menu/nav-menu.component';
+import { MatMenuModule } from '@angular/material/menu';
+import { MatButtonModule } from '@angular/material/button'
+import { MatSidenavModule } from '@angular/material/sidenav';
+import { MatListModule } from '@angular/material/list';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -29,6 +35,7 @@ import { MarginComponent } from './FInancials/margin/margin.component';
     ReactiveFormLoginComponent,
     AutocompleteComponent,
     DynamicReactFormComponent,
+    NavMenuComponent,
   ],
   imports: [
     BrowserModule,
@@ -40,8 +47,14 @@ import { MarginComponent } from './FInancials/margin/margin.component';
     BrowserAnimationsModule,
     ReactiveFormsModule,
     MatAutocompleteModule,
-    AppRoutingModule
+    AppRoutingModule,
+    MatMenuModule,
+    MatButtonModule,
+    MatSidenavModule,
+    MatListModule
+    
   ],
+  exports: [],
   providers: [],
   bootstrap: [AppComponent]
 })
