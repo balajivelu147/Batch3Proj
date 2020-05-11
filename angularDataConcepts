@@ -1,0 +1,18 @@
+
+run this line to disable web security, [when u r using external APIs]
+chrome.exe --user-data-dir="C:/Chrome dev session" --disable-web-security
+
+Observable: its an object which can observe or emit steam of arrays to its subcribers, 
+emits value asynchronouly to each of the subscribers 
+
+subsriber --> its an receiver of observable, it consumes the observable
+
+subsription --> after usage completes, we should always unsubscribe it, inorder to avoid memory leakage
+
+async pipe --> it is used in async data flow, which subscribes in html level, and subscribes when when data load completes
+
+scope of services 
+    --> provided in Root ---> service will be injected to all components when the project loads itself
+    --> providing in app.module --> injected when app.module loads
+    --> providinig in child module --> can be injected to child components of the module
+    --> providing in components --> injected only to that components
