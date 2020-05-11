@@ -25,6 +25,7 @@ import { MatMenuModule } from '@angular/material/menu';
 import { MatButtonModule } from '@angular/material/button'
 import { MatSidenavModule } from '@angular/material/sidenav';
 import { MatListModule } from '@angular/material/list';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -51,7 +52,8 @@ import { MatListModule } from '@angular/material/list';
     MatMenuModule,
     MatButtonModule,
     MatSidenavModule,
-    MatListModule
+    MatListModule,
+    HttpClientModule
     
   ],
   exports: [],
