@@ -42,5 +42,6 @@ forkjoin - this will make sure all the API calls been completed and it will merg
 switchmap - it always switches to latest provided value, ignores the prvious request
 Map - if you are changing the structure of the array and trying to mutate the object
 Tap - it avoids mutation using Tap, it wont change the structure of array
+mergeMap
 
 

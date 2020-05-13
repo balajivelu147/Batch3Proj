@@ -1,8 +1,8 @@
 
-<div>{{(yahooSample | async)?.finance.result[0].jobTimestamp}}</div> 
+<div>{{(yahooSample12 | async)?.finance.result[0].jobTimestamp}}</div> 
 
 
-
+<div>Observed result: {{resultParam}}</div>
 
 
 
@@ -20,3 +20,5 @@
         </a>
     </ul>
 </li>
+
+<button type="submit" (click)="assignObservable()">submit</button>
