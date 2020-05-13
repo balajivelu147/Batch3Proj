@@ -8,10 +8,10 @@ export class RxjsUtilityService {
 
   constructor() { }
 
-  public sampleSubject = new BehaviorSubject<string>('1');
+  public sampleSubject = new BehaviorSubject<number>(1);
   sampleSubject$ = this.sampleSubject.asObservable();
 
-  updateSampleSubject(value: string): void {
+  updateSampleSubject(value: number): void {
      this.sampleSubject.next(value);
   }
 }

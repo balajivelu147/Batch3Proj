@@ -28,15 +28,15 @@ unsubsribe = new Subject();
    this.rxjsUtilityService.sampleSubject.pipe(
      //first(),
      //take(5),
-      // takeWhile(y => y === '2', true),
-      takeUntil(this.unsubsribe),
+       takeWhile(y => y < 5, true),
+     // takeUntil(this.unsubsribe),
       tap(x => this.resultParam =   x)
     ).subscribe();
   }
 
   assignObservable(): void {
     this.incrementNumber = this.incrementNumber+1;
-    this.rxjsUtilityService.updateSampleSubject(this.incrementNumber.toString());
+    this.rxjsUtilityService.updateSampleSubject(this.incrementNumber);
   }
 
   ngOnDestroy() {
