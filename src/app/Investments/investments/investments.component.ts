@@ -21,22 +21,55 @@ unsubsribe = new Subject();
   ngOnInit(): void {
   this.yahooSample12 = this.yahooService.getYahooSampleInfo();
   this.yahooService.getYahooSampleInfo(); // bad
-    this.reacObservable();
+  this.assignObservable();
+  this.assignObservable();
+  this.reacObservable();
+  this.assignObservable();
+  this.assignObservable();
+  this.assignObservable();
+  this.reacObservable();
+  this.assignObservable();
+  this.reacObservable();
+  this.reacObservable();
+  this.reacObservable();
+  this.reacObservable();
+  this.reacObservable();
+  this.reacObservable();
+  this.reacObservable();
+
+  this.assignObservable();
+  this.reacObservable();
+
+  this.assignObservable();
+  this.completeObservable();
+    this.reacObservable(); 
+    this.reacObservable(); 
+
+    this.reacObservable(); 
+    this.reacObservable(); 
+
+
   }
 
   reacObservable(): void {
-   this.rxjsUtilityService.sampleSubject.pipe(
-     //first(),
-     //take(5),
-       takeWhile(y => y < 5, true),
-     // takeUntil(this.unsubsribe),
-      tap(x => this.resultParam =   x)
-    ).subscribe();
+
+  //  this.rxjsUtilityService.sampleSubject.pipe(
+  //    //first(),
+  //    //take(5),
+  //      takeWhile(y => y < 5, true),
+  //    // takeUntil(this.unsubsribe),
+  //     tap(x => this.resultParam =   x)
+  //   ).subscribe();
+  this.rxjsUtilityService.sampleSubject.subscribe(x => console.log(x))
   }
 
   assignObservable(): void {
     this.incrementNumber = this.incrementNumber+1;
     this.rxjsUtilityService.updateSampleSubject(this.incrementNumber);
+  }
+
+  completeObservable(): void {
+    this.rxjsUtilityService.completeSubject();
   }
 
   ngOnDestroy() {
