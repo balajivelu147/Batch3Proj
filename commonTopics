@@ -1,0 +1,5 @@
+Directives: An Attribute directive changes the appearance or behavior of a DOM element.
+
+            structural Directives -- *ngIf, *ngFor
+            custom Directives -- to achieve a special functiaonality manually
+            Attribute Directives -- directives which are already inbuilt, eg: matInput

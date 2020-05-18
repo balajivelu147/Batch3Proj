@@ -26,6 +26,7 @@ import { MatButtonModule } from '@angular/material/button'
 import { MatSidenavModule } from '@angular/material/sidenav';
 import { MatListModule } from '@angular/material/list';
 import { HttpClientModule } from '@angular/common/http';
+import { scrollToOptionDirective } from 'src/shared/directives/scrollToOption.directive';
 
 @NgModule({
   declarations: [
@@ -37,6 +38,7 @@ import { HttpClientModule } from '@angular/common/http';
     AutocompleteComponent,
     DynamicReactFormComponent,
     NavMenuComponent,
+    scrollToOptionDirective
   ],
   imports: [
     BrowserModule,
