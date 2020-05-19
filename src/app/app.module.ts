@@ -25,8 +25,11 @@ import { MatMenuModule } from '@angular/material/menu';
 import { MatButtonModule } from '@angular/material/button'
 import { MatSidenavModule } from '@angular/material/sidenav';
 import { MatListModule } from '@angular/material/list';
-import { HttpClientModule } from '@angular/common/http';
+import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { scrollToOptionDirective } from 'src/shared/directives/scrollToOption.directive';
+import { CommonModule } from '@angular/common';
+import { ExponentialStrengthPipe } from 'src/shared/pipes/exponential.pipe';
+import { I1, I2 } from 'src/shared/interceptors/interceptors';
 
 @NgModule({
   declarations: [
@@ -38,7 +41,8 @@ import { scrollToOptionDirective } from 'src/shared/directives/scrollToOption.di
     AutocompleteComponent,
     DynamicReactFormComponent,
     NavMenuComponent,
-    scrollToOptionDirective
+    scrollToOptionDirective,
+    ExponentialStrengthPipe
   ],
   imports: [
     BrowserModule,
@@ -55,11 +59,23 @@ import { scrollToOptionDirective } from 'src/shared/directives/scrollToOption.di
     MatButtonModule,
     MatSidenavModule,
     MatListModule,
-    HttpClientModule
+    HttpClientModule,
+    CommonModule
     
   ],
   exports: [],
-  providers: [],
+   providers: [
+    {
+        provide: HTTP_INTERCEPTORS,
+        useClass: I1,
+        multi: true
+    },
+    {
+        provide: HTTP_INTERCEPTORS,
+        useClass: I2,
+        multi: true
+    }
+],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

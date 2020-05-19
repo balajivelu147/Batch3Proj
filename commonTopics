@@ -3,3 +3,19 @@ Directives: An Attribute directive changes the appearance or behavior of a DOM e
             structural Directives -- *ngIf, *ngFor
             custom Directives -- to achieve a special functiaonality manually
             Attribute Directives -- directives which are already inbuilt, eg: matInput
+
+Pipes: pure and impure Pipes
+       builtIn pipes - async, upperclass, lowercase,titlecase, date, currency, {{name | uppercasepipe}}
+       custom pipe
+       https://angular.io/api?type=pipe
+
+
+Interceptors: interacts with Http requests(http, httpclient)
+              - it helps you to pass a value in common to all the API , passing tokens in header
+
+
+
+
+
+
+              tokens -> has to be passed for every
