@@ -1,6 +1,9 @@
 <form>
     <mat-form-field>
-        <input matInput id="autocomplete"
+        <input matInput
+        matscrollToOptionDirective
+         [optionHeight]="24"
+         id="autocomplete"
          placeholder="State"
          [matAutocomplete]="autocom" 
          [formControl]="state"/>
@@ -11,3 +14,5 @@
           </mat-autocomplete>
     </mat-form-field>
 </form>
+
+
