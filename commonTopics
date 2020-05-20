@@ -19,3 +19,10 @@ Interceptors: interacts with Http requests(http, httpclient)
 
 
               tokens -> has to be passed for every
+
+guards:
+CanActivate guard (e.g. it checks route access).
+CanActivateChild guard (checks child route access).
+CanDeactivate guard (prompt for unsaved changes). --> 
+Resolve guard (pre-fetching route data).  -->
+CanLoad guard (check before loading feature module assets).

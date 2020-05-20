@@ -6,14 +6,18 @@ import { TemplateDrivenFormComponent } from './template-driven-form/template-dri
 import { DynamicReactFormComponent } from './dynamic-react-form/dynamic-react-form.component';
 import { LoginComponent } from './login/login.component';
 import { InvestmentModule } from './Investments/investments.module';
+import { AuthGuarder } from 'src/shared/guards/canActivate.guards';
 
 
 const routes: Routes = [
   {path: 'investment', loadChildren: 'src/app/Investments/investments.module#InvestmentModule'},
-  { path: 'reactive-form-login', component: ReactiveFormLoginComponent}, //kebab casing
+  { path: 'reactive-form-login',
+   component: ReactiveFormLoginComponent,
+    canActivate: [AuthGuarder]},  
   { path: 'template-driven', component: TemplateDrivenFormComponent},
   { path: 'autocomplete', component: AutocompleteComponent},
-  {path: 'dynamic-reactive-form', component: DynamicReactFormComponent},
+  {path: 'dynamic-reactive-form', component: DynamicReactFormComponent,
+  canActivate: [AuthGuarder]},
   {path: 'login', component: LoginComponent},
   {path: '**', redirectTo: 'login'},
 
