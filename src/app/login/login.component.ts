@@ -56,4 +56,8 @@ export class LoginComponent implements OnInit {
     this.message = 'Logged ' + (this.authService.isLoggedIn ? 'in' : 'out');
   }
 
+  isFormValid() {
+    return true;
+  }
+
 }

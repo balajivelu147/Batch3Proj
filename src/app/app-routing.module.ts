@@ -18,7 +18,9 @@ const routes: Routes = [
   { path: 'autocomplete', component: AutocompleteComponent},
   {path: 'dynamic-reactive-form', component: DynamicReactFormComponent,
   canActivate: [AuthGuarder]},
-  {path: 'login', component: LoginComponent},
+  {path: 'login', 
+  canDeactivate: [AuthGuarder],
+  component: LoginComponent},
   {path: '**', redirectTo: 'login'},
 
 ];
