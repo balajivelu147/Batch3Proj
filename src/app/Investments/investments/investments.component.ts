@@ -3,6 +3,7 @@ import { YahooService } from 'src/shared/yahoo.service';
 import { Observable, of, BehaviorSubject, Subject } from 'rxjs';
 import { first, map, take, tap, takeWhile, takeUntil } from 'rxjs/operators';
 import { RxjsUtilityService } from 'src/shared/rxjs-utility/rxjs.utility.service';
+import { Router, ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'app-investments',
@@ -13,14 +14,16 @@ import { RxjsUtilityService } from 'src/shared/rxjs-utility/rxjs.utility.service
 export class InvestmentsComponent implements OnInit, OnDestroy {
 
   constructor(private yahooService: YahooService,
-    private rxjsUtilityService: RxjsUtilityService) { }
+    private rxjsUtilityService: RxjsUtilityService,
+    private route: ActivatedRoute) { }
   yahooSample12: any;
   resultParam;
   incrementNumber: number = 1;
 unsubsribe = new Subject();
   ngOnInit(): void {
-  this.yahooSample12 = this.yahooService.getYahooSampleInfo();
-  this.yahooService.getYahooSampleInfo(); // bad
+  this.yahooSample12 =  of(this.route.snapshot.data.result);
+  //this.yahooSample12 = this.yahooService.getYahooSampleInfo();
+ // this.yahooService.getYahooSampleInfo(); // bad
   this.assignObservable();
   this.assignObservable();
   this.reacObservable();

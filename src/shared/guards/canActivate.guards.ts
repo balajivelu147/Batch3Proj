@@ -1,14 +1,18 @@
 import { Injectable } from '@angular/core';
-import { CanActivate, CanActivateChild, Router, ActivatedRouteSnapshot, RouterStateSnapshot } from  '@angular/router';
+import { CanActivate, CanActivateChild, Router, ActivatedRouteSnapshot, RouterStateSnapshot, Resolve } from  '@angular/router';
 import { AuthService } from '../services/auth-guard.service';
+import { YahooService } from '../yahoo.service';
+import { Observable } from 'rxjs';
 
 
 @Injectable({
     providedIn: 'root'
 })
-export class AuthGuarder implements CanActivate, CanActivateChild{
+export class AuthGuarder implements CanActivate, CanActivateChild, Resolve{
 
-  constructor(private authService: AuthService, private router: Router) { }
+  constructor(private authService: AuthService,
+    private yahooService: YahooService,
+    private router: Router) { }
 
   canActivate(route: ActivatedRouteSnapshot, state: RouterStateSnapshot): boolean {
     let url: string = state.url;
@@ -17,6 +21,10 @@ export class AuthGuarder implements CanActivate, CanActivateChild{
 
   canActivateChild(route: ActivatedRouteSnapshot, state: RouterStateSnapshot): boolean {
     return this.canActivate(route, state);
+  }
+
+  resolve(): any | Observable<any> | boolean{
+    return this.yahooService.getYahooSampleInfo();
   }
 
   checkLogin(url: string): boolean {
