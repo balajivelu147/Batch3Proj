@@ -31,6 +31,7 @@ import { CommonModule } from '@angular/common';
 import { ExponentialStrengthPipe } from 'src/shared/pipes/exponential.pipe';
 import { I1, I2 } from 'src/shared/interceptors/interceptors';
 
+
 import { MyPRacticeComponent } from './my-practice/my-practice.component';
 @NgModule({
   declarations: [

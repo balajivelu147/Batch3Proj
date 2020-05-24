@@ -13,9 +13,11 @@ import { Router, ActivatedRoute } from '@angular/router';
 })
 export class InvestmentsComponent implements OnInit, OnDestroy {
 
+
   constructor(private yahooService: YahooService,
     private rxjsUtilityService: RxjsUtilityService,
     private route: ActivatedRoute) { }
+    yahooSample: Observable<any>;
   yahooSample12: any;
   resultParam;
   incrementNumber: number = 1;
@@ -74,6 +76,9 @@ unsubsribe = new Subject();
   completeObservable(): void {
     this.rxjsUtilityService.completeSubject();
   }
+  //  let routResult = this.route.snapshot.data.result;
+  // this.yahooSample = this.yahooService.getYahooSampleInfo();
+  // this.yahooService.getYahooSampleInfo().subscribe(x => console.log(x)); // bad
 
   ngOnDestroy() {
     this.unsubsribe.unsubscribe();
