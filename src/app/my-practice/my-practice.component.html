@@ -1,0 +1,9 @@
+<form [formGroup]= "userForm" (ngSubmit)= "onFormSubmit()">
+
+    Name: <input formControlName = "name" placeholder= "Enter name">
+    <label *ngIf="userName.invalid" class="sdfdsfds" 
+    [ngClass] = "'error'"
+    [attr.class]="error"> Name is required with 10 max character. </label>
+    Age: <input formControlName= "age" placeholder= "Enter age">
+    <button type = "submit">Submit</button>
+</form>

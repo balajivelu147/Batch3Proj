@@ -4,9 +4,10 @@ import { ReactiveFormLoginComponent } from './reactive-form-login/reactive-form-
 import { AutocompleteComponent } from './reactive-form-login/autocomplete/autocomplete.component';
 import { TemplateDrivenFormComponent } from './template-driven-form/template-driven-form.component';
 import { DynamicReactFormComponent } from './dynamic-react-form/dynamic-react-form.component';
+import { MyPRacticeComponent } from './my-practice/my-practice.component';
 import { LoginComponent } from './login/login.component';
 import { InvestmentModule } from './Investments/investments.module';
-import { AuthGuarder } from 'src/shared/guards/canActivate.guards';
+import { AuthGuarder } from 'src/shared/Gaurds/canActive-guard ';
 
 
 const routes: Routes = [
@@ -16,6 +17,7 @@ const routes: Routes = [
     canActivate: [AuthGuarder]},  
   { path: 'template-driven', component: TemplateDrivenFormComponent},
   { path: 'autocomplete', component: AutocompleteComponent},
+  { path: 'my-practice', component:  MyPRacticeComponent},
   {path: 'dynamic-reactive-form', component: DynamicReactFormComponent,
   canActivate: [AuthGuarder]},
   {path: 'login', 

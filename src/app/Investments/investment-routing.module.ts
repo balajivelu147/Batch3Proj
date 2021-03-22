@@ -4,7 +4,7 @@ import { CommonModule } from '@angular/common';
 import { InitialInvestmentComponent } from './initial-investment/initial-investment.component';
 import { PassiveInvestmentComponent } from './passive-investment/passive-investment.component';
 import { InvestmentsComponent } from './investments/investments.component';
-import { AuthGuarder } from 'src/shared/guards/canActivate.guards';
+import { AuthGuarder } from 'src/shared/Gaurds/canActive-guard ';
 
 
 const routes: Routes = [

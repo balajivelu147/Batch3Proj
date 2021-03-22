@@ -1,5 +1,5 @@
 import { BrowserModule } from '@angular/platform-browser';
-import { NgModule } from '@angular/core';
+import { NgModule} from '@angular/core';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -31,6 +31,8 @@ import { CommonModule } from '@angular/common';
 import { ExponentialStrengthPipe } from 'src/shared/pipes/exponential.pipe';
 import { I1, I2 } from 'src/shared/interceptors/interceptors';
 
+
+import { MyPRacticeComponent } from './my-practice/my-practice.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -42,7 +44,8 @@ import { I1, I2 } from 'src/shared/interceptors/interceptors';
     DynamicReactFormComponent,
     NavMenuComponent,
     scrollToOptionDirective,
-    ExponentialStrengthPipe
+    ExponentialStrengthPipe,
+    MyPRacticeComponent
   ],
   imports: [
     BrowserModule,
